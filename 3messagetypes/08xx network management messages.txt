@@ -1,0 +1,14 @@
+Signon , Signoff , key exchange messages
+
+
+once technical connectivity is established b/w acquirer and issuer between scheme
+
+
+the issuer and acquirer both need to send a signon message to the scheme indicating that now
+handshake has happenend.. please start sending authorizations.
+
+
+if scheme wants to update pin encryption key to members
+then key exchange messsages are used by scheme
+
+

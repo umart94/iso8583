@@ -1,0 +1,76 @@
+data encrypting keys : 
+1. keys that are used to encrypt data between 2 parties
+2. also used to generate some payment card related cryptograms ( like cvv, cvc etc.)
+
+
+
+2. key encrypting keys
+
+keys are not stored in clear form
+keys that are used to encrypt the keys
+
+
+ISSUER CMS <- PIN ENCRYPTION KEY <- PIN PRINTING VENDOR
+
+
+
+
+KEY ENCRYPTING KEYS
+
+
+issuer does not store the key in clear as is
+
+issuer have their own master key which is a key encrypting key
+
+
+
+trusted link between two parties in an ecosystem is called as zone
+
+few keys : 
+
+1. zone master key
+every 2 parties share a zone master key
+this is used to exchange any keys between entities in a zone
+this is a key encrypting key
+
+
+
+
+
+2. pin related keys : 
+zone pin key
+pin is never transmitted in clear between two parties. it is transmitted as a pin block
+each pair of entities share a unique key for pin transmission. this pin key is encrypted under a zone master key
+then called as a zone pin key.
+
+it is a data encrypting key
+
+
+
+pin verification key
+cardholder pin is never stored in clear in system
+
+a pvv pin verification value or a pin offset is generated against a pin number and stored in issuer system
+
+
+to generate and validate the pin , a pin verification key is used.
+
+it is a data encrypting key.
+
+
+
+
+card verification key (CVK)
+cvc / cvv 2 = 3 digit number printed on back of card
+cvc cvv 1 = 3 digit number printed inside the mag stripe.
+
+
+a CVK key is required to generate a CVC
+CVC is generated at the time of generating a new card
+the same CVK key is used to verify a cvc during the transaction
+
+seperate keys are required for cvc1 and cvc2
+
+
+
+THESE WERE ALL SYMMETRIC KEYS.

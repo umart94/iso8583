@@ -1,0 +1,97 @@
+Message Type Indicator
+type of message , 4 digit numeric number
+
+XYZA
+0200
+
+
+X = 0 = 1987 Version
+
+PURPOSE OF MESSAGE = Y
+Y = 2 = Financial
+Y = 1 = AUTHORIZATION
+Y = 4 = REVERSAL
+
+FUNCTION OF MESSAGE = Z
+Z = 0 = REQUEST
+Z = 1 = RESPONSE
+Z = 2 = ADVICE
+Z = 3 = ADVICE RESPONSE
+
+SOURCE = A = 0 = ACQUIRER
+A = 2 = ISSUER
+
+SOURCE TELLS who the message was initiated by
+
+
+
+BITMAP
+
+provides information of which data elements are present in the message
+
+first bit in primary bitmap (FROM THE LEFT) tells us if secondary bitmap is present or not
+if it is 1, secondary bitmap is present
+if it is 0 , secondary bitmap is not present
+
+
+after the first bit, each bit indicates each data element
+
+2nd bit indicates DE2, 3rd bit indicates DE3 and so on..
+
+
+
+For DE 2 - 64 -> Primary Bitmap is used
+For DE 65 - 128 -> Secondary Bitmap is used
+For DE 129 - 192 -> Tertiary Bitmap is used
+
+
+
+
+
+DATA ELEMENTS
+
+
+data types are
+
+a - alphabets only (including blanks)
+n - numeric only
+an - alphanumeric
+as - alphabet + special characters
+ans - alphabet + numeric + special characters
+ns - numeric + special characters
+b - binary data
+
+
+data types can be fixed or variable.
+
+fixed means data element is of fixed length
+
+LLVAR OR LLLVAR indicates data element is variable in length
+
+LL OR LLL indicates length of variable data 
+
+LL if the length is 0-99
+LLL if length is 000-999
+
+VAR indicates data component
+
+
+
+processing code === n - 6 fixed 6 byte numeric
+
+Bytes 1-2 transaction type
+00 = Purchase
+01 = withdrawal
+20 = return / refund
+28 = payment
+30 = balance inquiry
+
+
+bytes 3-4 from account
+bytes 5-6 to account
+
+account type
+00 = default account
+10 = savings account
+20 = checking account
+30 = credit card account

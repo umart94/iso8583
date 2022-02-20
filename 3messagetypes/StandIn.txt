@@ -1,0 +1,82 @@
+standin processing STIP 
+
+is a process where if issuer or acquirer is unavailable scheme takes a decision on their behalf
+
+scheme acts like a backup on behalf of issuer or acquirer
+
+
+Scenario that enforces STIP : 
+
+1. connectivity to issuer is down
+issuer does not respond in time limit
+schemes continuously receieves timeouts
+
+
+issuer signs off intentionally
+
+maintenance activity.
+
+
+
+
+
+
+
+stand in parameters
+
+schemes provide following options for issuers to setup which are used by schemes to decide the authorization
+
+1. transaction parameters
+2. exception files ( positive and negative file) whitelist or blacklist certain accounts
+3. request scheme to perform pin emv checks
+
+
+
+
+
+
+Transaction parameters that issuers can send : 
+
+1. issuers can send count of approved transactions for a given account ( per day)
+2. amount of approved transactions for a given account ( per day)
+3. single transaction amount.
+
+
+
+
+Exception Files:
+
+1. Schemes maintain positive and negative files.
+2. it is updated by issuers to pass good / bad accounts
+
+
+3. negative file
+
+issuers provide details of cards for which transactions to be declined
+
+closed, blocked, delinquent( means tending to commit crime)
+
+positive files
+
+issuers provide details of special vip cardholders for which different transaction parameters to be applied.
+
+
+
+
+How stand in works ?
+
+
+
+1. acquirer sends 0100 auth request to scheme BUT ISSUER NOT PRESENT
+2. SCHEME stands on behalf of issuer and decides the authorization and authorization is storeed in SAF File. store and forward queue.
+3. sceheme responds to acquirer
+4. issuer requests for an advice retrieval from saf
+5. scheme provides the authorization advices to issuer.
+
+
+decision made by scheme for advice cannot be modified by issuer.
+
+
+
+ISSUER will request for advices to scheme via administrative messages (0800) refferred to as a advice retrieval mode.
+

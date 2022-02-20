@@ -1,0 +1,4 @@
+all 01xx messages are dms , dual message system, every transaction has a followed by a transaction in clearing file. hence it is dual messaging system
+
+02xx are financial messages, it works like 01xx , but they are single message systems. no clearing file is associated for these transactions.
+

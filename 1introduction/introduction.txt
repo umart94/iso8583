@@ -1,0 +1,21 @@
+Traditional Payment Protocols
+Protocol = TCP/IP Socket
+Message Format = ISO8583 
+
+
+message goes from POS -> Acquirer , Acquirer -> Scheme , Scheme -> Issuer
+
+
+newer payment protocols use http / apis and use json / xml format
+
+mastercard / visa provide a hardware / software called as mastercard interface processor / visa access point
+which controls the communication to Banknet (MasterCard network) and VisaNet(Visa's Network)
+
+
+banknet/visanet open up server sockets and allow banks to connect via tcp/ip sockets through MIP / VAP mastercard interface processor / visa access point
+
+
+[ Issuer or acquirer transaction switch ] can communicate to [visa mastercard (MasterCard network) and VisaNet(Visa's Network)] only through [MIP / VAP mastercard interface processor / visa access point]
+
+transaction switch acts as a client socket
+visa mastercard have server socket

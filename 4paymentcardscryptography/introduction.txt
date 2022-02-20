@@ -1,0 +1,44 @@
+obfuscation
+
+encryption decryption - two way process
+
+masking - irreversible process
+data is obfuscated using some random data
+we cannot restore data back into original data
+
+symmetric key cryptography
+
+the sender and the receiver both share the same key.
+
+
+
+asymmetric key cryptography
+
+sender uses Public key of receiver to encrypt original data
+encrypted ciphertext is transmitted to the receiver
+the receiver uses his own private key and converts it to original data
+
+
+
+
+
+
+uses of these types of cryptography are :
+generation and validation of cvc ( printed on back of card )
+generation and validation of pin data
+
+emv - chip cards
+
+storage of data inside a chip
+cryptogram validation
+
+
+
+HSM is a hardware security module
+
+tamper resistant hardware which performs 
+
+key generation and key storage
+encryption and decryption
+
+the hsm connects to transaction switch and payment applications for performing cryptographic functions

@@ -1,0 +1,7 @@
+if issuer wants to send any update to scheme 
+
+if card block happens
+
+issuer initiates a file update request 0302
+
+scheme replies with a 0312 file update response

@@ -1,0 +1,55 @@
+Authorization : 
+
+1. Scenario 1 - authorization Normal Flow ( 0100 - 0110)
+
+Acquirer -> 011 Auth Req -> Scheme -> 0100 Auth Req -> Issuer
+
+Acquirer <- 0110 auth response <- scheme <- 0110 auth response <- issuer
+
+
+
+
+2. Secnario 2 - Authorization - Communication Failure To Scheme (0100)
+
+if scheme is not reachable from acquirer nothing happens, 
+acquirer shows error message at terminal scheme is not reachable
+
+
+
+3. Scenario 3 - Authorization - Communication Failure Between Scheme and Issuer (0100 & 0120)
+
+i.e Acquirer delivers message to scheme, but scheme is not able to deliver to issuer
+
+
+Acquirer -> [1] 0100 auth req -> scheme -> [1] DOES NOT HAPPEN -> Issuer
+Acquirer <- [2] 0110 auth response <- SCHEME STAND-IN <- ISSUER NOT AVAILABLE
+
+
+
+
+if ISSUER OPTED FOR STAND IN, scheme responds to acquirer on behalf of issuer
+
+
+ONCE ISSUER IS AVAILABLE SCHEME SENDS AN 0120 auth advice to issuer [3]
+issuer responds with 0130 auth advice
+
+an advice message means issuer CANNOT MODIFY DECISION taken by Scheme.
+
+
+
+
+4. Scenario 4 - Authorization - Communication Failure to acquirer (0100 & 0420)
+
+Scheme is not able to reach acquirer during authorization response.
+
+
+
+acquirer -> 0100 auth req scheme -> 0100 auth req -> issuer
+
+acquirer <- 0110 auth response <- scheme <- 0110 auth response <- issuer
+
+
+Scheme will send a 420 message to issuer called 420 reversal advice
+
+
+issuer will receive it and sends 430 reversal advice response

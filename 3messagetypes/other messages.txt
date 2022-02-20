@@ -1,0 +1,7 @@
+05xx messages : used for reconcilation messages typically transmitted from pos terminal to the acquirer for settlement ( settlement button in pos terminal)
+
+net settlement amount
+
+
+
+administrative type messages : = 06xx messages ... used to transmit text messages betweeen scheme and members

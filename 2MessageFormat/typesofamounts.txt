@@ -1,0 +1,8 @@
+transaction amount : amount in local currency of acquirer
+
+cardholder billing amount : transaction amount in issuer's currency
+
+settlement amount : funds to be transferred from acquirer to issuer ( in settlement currency)
+
+fees : any fees to be billed to cardholder
+
